@@ -78,7 +78,7 @@ router.post("/signin", async (req,res)=>{
     }
 });
 
-router.get("/gallery", authenticate, (req,res)=>{
+router.get("/gallery", (req,res)=>{
     console.log("Hello my gallery");
     res.send(req.rootUser);
 });
