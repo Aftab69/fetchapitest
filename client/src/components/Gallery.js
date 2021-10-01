@@ -5,7 +5,7 @@ const Gallery = () => {
     const history = useHistory(); 
     const callGalleryPage = async () => {
         try{
-          const res = await fetch("/about",{
+          const res = await fetch("/gallery",{
               method:"GET",
               headers: {
                   Accept: "application/json",
