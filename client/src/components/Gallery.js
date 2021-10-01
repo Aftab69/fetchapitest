@@ -27,7 +27,7 @@ const Gallery = () => {
     }
     useEffect(() => {
         callGalleryPage();
-    }, []);
+    }, );
     
     return (
     <>
