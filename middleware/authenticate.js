@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../model/userSchema");
 
 const Authenticate = async (req,res,next) =>{
+    console.log("hi");
      try{
         const token = req.cookies.jwtoken;
         console.log("token");
