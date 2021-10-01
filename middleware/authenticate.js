@@ -1,5 +1,5 @@
-import { verify } from "jsonwebtoken";
-import { findOne } from "../model/userSchema";
+const jwt = require("jsonwebtoken");
+const User = require("../model/userSchema");
 
 const Authenticate = async (req,res,next) =>{
     console.log("hi");
