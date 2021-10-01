@@ -31,7 +31,7 @@ const Signin = () => {
         } else {
             window.alert("Login Successful");
             console.log("Login Successful");
-            history.push("/about");
+            history.push("/gallery");
         }
 
     }

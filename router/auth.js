@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
+const authenticate = require("../middleware/authenticate");
 
 require("../db/conn");
 const User = require("../model/userSchema");
@@ -75,6 +76,11 @@ router.post("/signin", async (req,res)=>{
     catch(error){
         console.log(error);
     }
-})
+});
+
+router.get("/gallery", authenticate, (req,res)=>{
+    console.log("Hello my gallery");
+    res.send(req.rootUser);
+});
 
 module.exports = router;
