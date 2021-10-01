@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const cookieParser = require('cookie-parser');
-const authenticate = require("../middleware/authenticate").default;
+const authenticate = require("../middleware/authenticate");
 router.use(cookieParser());
 
 require("../db/conn");
