@@ -1,6 +1,8 @@
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const express = require("express");
+var cookieParser = require('cookie-parser');
+
 //const cors = require("cors");
 const app = express();
 
@@ -12,6 +14,7 @@ dotenv.config({ path: './config.env'});
 require('./db/conn');
 //const User = require("./model/userSchema");
 app.use(express.json());
+app.use(cookieParser());
 app.use(require("./router/auth"));
 
 const port = process.env.PORT;

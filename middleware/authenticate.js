@@ -1,13 +1,13 @@
-const jwt = require("jsonwebtoken");
-const User = require("../model/userSchema");
+import { verify } from "jsonwebtoken";
+import { findOne } from "../model/userSchema";
 
 const Authenticate = async (req,res,next) =>{
     console.log("hi");
      try{
         const token = req.cookies.jwtoken;
         console.log("token");
-        const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
-        const rootUser = await User.findOne({_id: verifyToken._id, "tokens.token": token});
+        const verifyToken = verify(token, process.env.SECRET_KEY);
+        const rootUser = await findOne({_id: verifyToken._id, "tokens.token": token});
         if(!rootUser){ throw new Error("User not found")}
         req.token = token;
         req.rootUser = rootUser;
@@ -19,4 +19,4 @@ const Authenticate = async (req,res,next) =>{
      }
 };
 
-module.exports = Authenticate;
+export default Authenticate;

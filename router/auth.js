@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
-const authenticate = require("../middleware/authenticate");
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
+const authenticate = require("../middleware/authenticate").default;
 
 require("../db/conn");
 const User = require("../model/userSchema");
@@ -78,7 +80,7 @@ router.post("/signin", async (req,res)=>{
     }
 });
 
-router.get("/gallery", (req,res)=>{
+router.get("/gallery", authenticate, (req,res)=>{
     console.log("Hello my gallery");
     res.send(req.rootUser);
 });

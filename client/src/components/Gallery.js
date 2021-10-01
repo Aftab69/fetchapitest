@@ -27,7 +27,8 @@ const Gallery = () => {
     }
     useEffect(() => {
         callGalleryPage();
-    }, );
+        //  eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     
     return (
     <>
