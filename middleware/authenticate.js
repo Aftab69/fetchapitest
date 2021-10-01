@@ -19,4 +19,4 @@ const Authenticate = async (req,res,next) =>{
      }
 };
 
-export default Authenticate;
+module.exports = Authenticate;
