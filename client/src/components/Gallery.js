@@ -45,11 +45,11 @@ const Gallery = () => {
             [users.results].map((curElem)=>{
                 console.log(curElem);
                return(
-                   <>
+                   
                     <div className="container-fluid gallery_container bg-warning" >
                        <img src={curElem.urls.small} alt={curElem.description} />
                     </div>
-                   </>
+                   
                )
             })
         }
