@@ -46,7 +46,7 @@ const Gallery = () => {
                return(
                    <>
                     <div className="container-fluid gallery_container bg-warning" >
-                       <img src={curElem.urls.raw} alt={curElem.description} />
+                       <img className="img_sizes" src={curElem.urls.raw} alt={curElem.description} />
                     </div>
                    </>
                )
