@@ -31,7 +31,7 @@ const Gallery = () => {
     }, []);
 
     const getImages = async () =>{
-        const response = await fetch("https://api.unsplash.com/search/photos?query=landscapes&client_id=Isl0H6YfmIXs0oi3jKwYzESEOr3Rj8ZrtoVC8ArgnIU");
+        const response = await fetch("https://jsonplaceholder.typicode.com/albums/1/photos");
         const data = await response.json();
         console.log(data);
     }
