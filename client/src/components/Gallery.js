@@ -33,9 +33,7 @@ const Gallery = () => {
     const [users, setUsers] = useState([]);
     const getImages = async () =>{
         const response = await fetch("https://api.unsplash.com/search/photos?query=landscapes&client_id=Isl0H6YfmIXs0oi3jKwYzESEOr3Rj8ZrtoVC8ArgnIU");
-        setUsers(await response.json());
-        const check = await response.json;
-        console.log(check);
+        setUsers(await response.data.results.json());
     }
     useEffect(()=>{
         getImages();
@@ -44,7 +42,7 @@ const Gallery = () => {
     return (
     <>
         {
-            [users.results].map((curElem)=>{
+            users.map((curElem)=>{
                 console.log(curElem);
                return(
                    <>
