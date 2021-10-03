@@ -46,7 +46,7 @@ const Gallery = () => {
                return(
                    <>
                     <div className="container-fluid gallery_container bg-warning" >
-                       <p>Hi{curElem.login}</p>
+                       <p>Hi{curElem.title}</p>
                     </div>
                    </>
                )
