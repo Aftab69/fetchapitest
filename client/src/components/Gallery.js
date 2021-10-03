@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
+import imagetest from"../images/imagetest.jpg";
 
 const Gallery = () => {
     const history = useHistory(); 
@@ -28,11 +29,20 @@ const Gallery = () => {
         //callGalleryPage();
         //  eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    const getImages = async () =>{
+        const response = await fetch("api.unsplash.com/search/photos?query=landscapes&client_id=Isl0H6YfmIXs0oi3jKwYzESEOr3Rj8ZrtoVC8ArgnIU");
+        const data = await response.json();
+        console.log(data);
+    }
+    useEffect(()=>{
+        getImages();
+    })
     
     return (
     <>
-        <div>
-            <p>Gallery page</p>
+        <div className="container-fluid gallery_container bg-warning" >
+            <img className="img_sizes" src={imagetest} alt="landscapes" />
         </div>
     </>
     )
