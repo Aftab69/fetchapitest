@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import imagetest from"../images/imagetest.jpg";
 
@@ -29,21 +29,31 @@ const Gallery = () => {
         //callGalleryPage();
         //  eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
+    
+    const [users, setUsers] = useState([]);
     const getImages = async () =>{
         const response = await fetch("https://jsonplaceholder.typicode.com/albums/1/photos");
-        const data = await response.json();
-        console.log(data);
+        setUsers(await response.json());
     }
     useEffect(()=>{
         getImages();
-    })
+    },[]);
     
     return (
     <>
-        <div className="container-fluid gallery_container bg-warning" >
-            <img className="img_sizes" src={imagetest} alt="landscapes" />
-        </div>
+        {
+            users.map((curElem)=>{
+               return(
+                   <>
+                    <div className="container-fluid gallery_container bg-warning" >
+                       <img className="img_sizes" src={imagetest} alt="landscapes" />
+                       <p>{curElem.login}</p>
+                    </div>
+                   </>
+               )
+            })
+        }
+        
     </>
     )
 }
