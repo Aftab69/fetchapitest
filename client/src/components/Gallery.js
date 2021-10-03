@@ -34,6 +34,8 @@ const Gallery = () => {
     const getImages = async () =>{
         const response = await fetch("https://api.unsplash.com/search/photos?query=landscapes&client_id=Isl0H6YfmIXs0oi3jKwYzESEOr3Rj8ZrtoVC8ArgnIU");
         setUsers(await response.json());
+        const check = await response.json;
+        console.log(check);
     }
     useEffect(()=>{
         getImages();
@@ -45,11 +47,11 @@ const Gallery = () => {
             [users.results].map((curElem)=>{
                 console.log(curElem);
                return(
-                   
+                   <>
                     <div className="container-fluid gallery_container bg-warning" >
                        <img src={curElem.urls.small} alt={curElem.description} />
                     </div>
-                   
+                   </>
                )
             })
         }
