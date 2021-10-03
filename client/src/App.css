@@ -76,10 +76,17 @@
 }
 .gallery_container{
   width: 90%;
+  margin-top: 10%;
   height: auto;
   border-radius: 15px;
 }
 .img_sizes{
   width: 100%;
   height: auto;
+  padding: 3%;
+}
+.gallery_page_background{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: burlywood;
 }

@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import { useHistory } from 'react-router-dom';
-import imagetest from"../images/imagetest.jpg";
 
 const Gallery = () => {
     const history = useHistory(); 
@@ -26,7 +25,7 @@ const Gallery = () => {
         }
     }
     useEffect(() => {
-        //callGalleryPage();
+        callGalleryPage();
         //  eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     
@@ -41,18 +40,23 @@ const Gallery = () => {
     
     return (
     <>
+    <div className="gallery_page_background">
         {
             users.map((curElem)=>{
                return(
                    <>
-                    <div className="container-fluid gallery_container bg-warning" >
-                       <img className="img_sizes" src={curElem.urls.raw} alt={curElem.description} />
-                    </div>
+                    
+                        <div className="container-fluid gallery_container bg-dark" >
+                        <img className="img_sizes" src={curElem.urls.raw} alt={curElem.description} />
+                        </div>
+                        <div className="text-center">
+                            <p>Clicked by {curElem.user.name}</p>
+                        </div>
                    </>
                )
             })
         }
-        
+    </div>
     </>
     )
 }
