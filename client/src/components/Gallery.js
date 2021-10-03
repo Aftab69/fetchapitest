@@ -32,7 +32,7 @@ const Gallery = () => {
     
     const [users, setUsers] = useState([]);
     const getImages = async () =>{
-        const response = await fetch("api.unsplash.com/search/photos?query=landscapes&client_id=Isl0H6YfmIXs0oi3jKwYzESEOr3Rj8ZrtoVC8ArgnIU");
+        const response = await fetch("https://api.unsplash.com/search/photos?query=landscapes&client_id=Isl0H6YfmIXs0oi3jKwYzESEOr3Rj8ZrtoVC8ArgnIU");
         setUsers(await response.json());
     }
     useEffect(()=>{
@@ -47,7 +47,7 @@ const Gallery = () => {
                return(
                    <>
                     <div className="container-fluid gallery_container bg-warning" >
-                       <img src={curElem.results.urls.small} alt={curElem.results.description} />
+                       <img src={curElem.urls.small} alt={curElem.results.description} />
                     </div>
                    </>
                )
