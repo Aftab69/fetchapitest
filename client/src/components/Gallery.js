@@ -45,7 +45,6 @@ const Gallery = () => {
     <>
         {
             result.map((curElem)=>{
-                console.log(curElem);
                return(
                    <>
                     <div className="container-fluid gallery_container bg-warning" >
