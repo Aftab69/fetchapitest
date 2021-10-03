@@ -46,7 +46,6 @@ const Gallery = () => {
                return(
                    <>
                     <div className="container-fluid gallery_container bg-warning" >
-                       <img className="img_sizes" src={imagetest} alt="landscapes" />
                        <p>{curElem.login}</p>
                     </div>
                    </>
