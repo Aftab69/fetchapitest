@@ -42,7 +42,7 @@ const Gallery = () => {
     return (
     <>
         {
-            users.results.map((curElem)=>{
+            [users.results].map((curElem)=>{
                 console.log(curElem);
                return(
                    <>
