@@ -32,7 +32,7 @@ const Gallery = () => {
     
     const [users, setUsers] = useState([]);
     const getImages = async () =>{
-        const response = await fetch("https://jsonplaceholder.typicode.com/albums/1/photos");
+        const response = await fetch("api.unsplash.com/search/photos?query=landscapes&client_id=Isl0H6YfmIXs0oi3jKwYzESEOr3Rj8ZrtoVC8ArgnIU");
         setUsers(await response.json());
     }
     useEffect(()=>{
@@ -46,7 +46,7 @@ const Gallery = () => {
                return(
                    <>
                     <div className="container-fluid gallery_container bg-warning" >
-                       <p>Hi{curElem.title}</p>
+                       <p>Hi{curElem.urls.small}</p>
                     </div>
                    </>
                )
