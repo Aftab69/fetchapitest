@@ -47,7 +47,7 @@ const Gallery = () => {
                    <>
                     
                         <div className="container-fluid gallery_container bg-dark" >
-                        <img className="img_sizes" src={curElem.urls.full} alt={curElem.description} />
+                        <img className="img_sizes" src={curElem.urls.regular} alt={curElem.description} />
                         </div>
                         <div className="text-center">
                             <p>Clicked by {curElem.user.name}</p>
