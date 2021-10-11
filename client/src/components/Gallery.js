@@ -31,7 +31,7 @@ const Gallery = () => {
     
     const [users, setUsers] = useState([]);
     const getImages = async () =>{
-        const response = await fetch("https://api.unsplash.com/collections/1364150/photos?per_page=9&client_id=Isl0H6YfmIXs0oi3jKwYzESEOr3Rj8ZrtoVC8ArgnIU");
+        const response = await fetch("https://api.unsplash.com/collections/1364150/photos?per_page=30&client_id=Isl0H6YfmIXs0oi3jKwYzESEOr3Rj8ZrtoVC8ArgnIU");
         setUsers(await response.json());
     }
     useEffect(()=>{
